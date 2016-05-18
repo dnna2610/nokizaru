@@ -37,7 +37,7 @@ jumpspeed_powerup = 18;
 jumpspeed = jumpspeed_normal;
 key_down = 0;
 last_wall =0;
-fric = 0.75;
+fric = 0.25; // from 0 to 1
 
 if (global.backtrack == true ) 
 {
@@ -117,7 +117,7 @@ acceleration = 0;
 // Check for ground and react
 ground = place_meeting(x, y+1, obj_wall);
 if (ground) {
-    hsp *=  obj_player.fric;
+    hsp *= 1 - obj_player.fric;
     last_wall = 0;
     if (key_jump) {
         vsp = -jumpspeed;

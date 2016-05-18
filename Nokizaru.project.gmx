@@ -31,6 +31,9 @@
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_loadgame.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
     <font>fonts\fnt_med</font>
@@ -71,10 +74,12 @@
       <object>objects\obj_door_previous</object>
       <object>objects\obj_youWin</object>
       <object>objects\obj_bkgm</object>
+      <object>objects\obj_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="alpha1">
+      <room>rooms\menu</room>
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_1_2_new</room>
       <room>rooms\rm_1_3_new</room>
