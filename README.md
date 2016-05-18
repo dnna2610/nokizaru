@@ -1,3 +1,2 @@
 # Nokizaru
-Awesome Ninja Game - Made with GameMaker
-GMAP 260
+Awesome Ninja Game - Made with GameMaker - GMAP 260
