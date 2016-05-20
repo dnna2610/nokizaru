@@ -28,6 +28,7 @@
     <sprite>sprites\spr_forestground_bg</sprite>
     <sprite>sprites\spr_forestground_dark</sprite>
     <sprite>sprites\spr_player_c</sprite>
+    <sprite>sprites\spr_menu_arrow</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -79,7 +80,7 @@
   </objects>
   <rooms name="rooms">
     <rooms name="alpha1">
-      <room>rooms\menu</room>
+      <room>rooms\rm_menu</room>
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_1_2_new</room>
       <room>rooms\rm_1_3_new</room>
