@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>if (room != rm_6_movementtest) 
 {
-        global.backtrack = true;
+        obj_player.backtrack = true;
+        script_execute(scr_writeIni);
         room_goto_previous();
 }
 </string>

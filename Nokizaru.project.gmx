@@ -34,6 +34,9 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_loadgame.gml</script>
+    <script>scripts\scr_savegame.gml</script>
+    <script>scripts\scr_writeIni.gml</script>
+    <script>scripts\scr_readIni.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
@@ -81,7 +84,6 @@
   <rooms name="rooms">
     <rooms name="alpha1">
       <room>rooms\rm_menu</room>
-      <room>rooms\rm_initialize</room>
       <room>rooms\rm_1_2_new</room>
       <room>rooms\rm_1_3_new</room>
       <room>rooms\rm_1_4_new</room>
