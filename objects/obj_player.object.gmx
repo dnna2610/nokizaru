@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Initialize Variables
 backtrack = false;
+walljump = false;
 grav = 0.8;
 hsp = 0;
 hsp_carry = 0;
@@ -107,7 +108,8 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (backtrack == true ) 
+            <string>///Backtrack
+if (backtrack == true ) 
 {
     x = obj_door_next.x - 32;
     y = obj_door_next.y;
@@ -266,7 +268,7 @@ if (ground) {
 } else {
     if ( vsp &lt; 10 ) vsp += grav;
     //Walljumping
-    if ( key_jump ) &amp;&amp; ( place_meeting ( x + 1, y, obj_wall ) || place_meeting ( x - 1, y, obj_wall ) )
+    if ( key_jump ) &amp;&amp; walljump &amp;&amp; ( place_meeting ( x + 1, y, obj_wall ) || place_meeting ( x - 1, y, obj_wall ) )
     {
         if ((last_wall != x+1) &amp;&amp; (last_wall != x-1)){
             vsp = -jumpspeed;       
