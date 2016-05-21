@@ -29,6 +29,7 @@
     <sprite>sprites\spr_forestground_dark</sprite>
     <sprite>sprites\spr_player_c</sprite>
     <sprite>sprites\spr_menu_arrow</sprite>
+    <sprite>sprites\spr_enemy_leaper</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -69,6 +70,7 @@
       <object>objects\obj_enemy_pace</object>
       <object>objects\obj_spider</object>
       <object>objects\obj_flying_enemy</object>
+      <object>objects\obj_leaper</object>
     </objects>
     <objects name="Elements">
       <object>objects\obj_controller</object>
@@ -79,6 +81,7 @@
       <object>objects\obj_youWin</object>
       <object>objects\obj_bkgm</object>
       <object>objects\obj_menu</object>
+      <object>objects\obj_pause</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -159,6 +159,8 @@
     <instance objName="obj_wall" x="-12" y="420" name="inst_BC2B8E1B" locked="0" code="" scaleX="0.5" scaleY="20.375" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="1068" y="696" name="inst_8E30C426" locked="0" code="" scaleX="1" scaleY="-13.6899995803833" colour="4294967295" rotation="0"/>
     <instance objName="obj_forestground" x="1056" y="720" name="inst_69F15E3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="204" y="204" name="inst_DE5EB190" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_leaper" x="396" y="696" name="inst_F8B940BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
