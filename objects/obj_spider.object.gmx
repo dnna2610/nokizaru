@@ -98,25 +98,6 @@ if(place_meeting(x, y + vsp, obj_wall))
 
 x += hsp;
 y += vsp;
-
-// Enemy collision
-if (place_meeting(x,y,obj_player))
-{
-    if (obj_player.y &lt; y-16)
-    {
-        with ( obj_player ) 
-            vsp = -jumpspeed;
-        instance_destroy();
-    }
-    else
-    {
-        with ( obj_player )
-            instance_destroy();
-        audio_play_sound ( snd_death , 0 , false );
-        instance_create ( 0 , 0 , obj_gameOver );
-        instance_create ( 0 , 0 , obj_controller );
-    }
-}
 </string>
           </argument>
         </arguments>

@@ -122,7 +122,10 @@ draw_sprite(sprite_index, 0, x+16, y + mpos * mspace);
             <kind>1</kind>
             <string>switch (mpos)
 {
-    case 0: room_goto_next(); break;
+    case 0: 
+        script_execute(scr_newgame);
+        room_goto_next();
+        break;
     case 1: scr_loadgame(); break;
     case 2: game_end(); break;
 }

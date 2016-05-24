@@ -65,7 +65,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (room != room_last) room_goto_next();
+            <string>if (room != room_last) 
+{
+    room_goto_next();
+}
 </string>
           </argument>
         </arguments>

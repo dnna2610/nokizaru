@@ -5,10 +5,24 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +39,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir = -1;
+            <string>enum leaper_state {
+    idle,
+    seeking
+}
+dir = -1;
 movespeed = 3;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
+
+state = leaper_state.seeking;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Change state to seeking
+state = leaper_state.seeking
 </string>
           </argument>
         </arguments>
@@ -38,6 +82,20 @@ vsp = 0;
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
+        <id>604</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_inherited</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -52,18 +110,24 @@ vsp = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hsp = dir * movespeed;
+            <string>
 vsp += grav;
-if (instance_exists(obj_player)) {
-    if (distance_to_object(obj_player) &lt; 256) {
-        ground = place_meeting(x,y+1, obj_wall);
+ground = place_meeting(x,y+1, obj_wall);
+if (state == leaper_state.idle) {
+    if (ground) {
+        alarm[0] = room_speed * 1;
+    }
+} else {   
+    hsp = dir * movespeed;
+    if (instance_exists(obj_player)) {
         if (ground) {
-            vsp = -6;
+            vsp = jump;
             dir = -sign(x - obj_player.x);
             hsp *= dir;
             hsp *= 2;
         }
     }
+    state = leaper_state.idle;
 }
 //Horizontal Collision
 if(place_meeting(x + hsp, y, obj_wall))
@@ -91,22 +155,6 @@ if(place_meeting(x, y + vsp, obj_wall))
     }
 }
 y += vsp;
-
-// Enemy collision
-if (place_meeting(x,y,obj_player))
-{
-    with ( obj_player )
-    instance_destroy();
-    audio_play_sound ( snd_death , 0 , false );
-    instance_create ( 0 , 0 , obj_gameOver );
-    instance_create ( 0 , 0 , obj_controller );
-}
-
-//Sword collision
-if(place_meeting(x,y,obj_attack))
-{
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

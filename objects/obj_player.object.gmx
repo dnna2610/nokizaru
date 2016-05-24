@@ -28,6 +28,11 @@
             <string>///Initialize Variables
 backtrack = false;
 walljump = false;
+doublejump = false;
+fireball = false;
+hpupgrade = false;
+hp = 100;
+max_hp = 100;
 grav = 0.8;
 hsp = 0;
 hsp_carry = 0;
@@ -39,9 +44,11 @@ jumpspeed_powerup = 18;
 jumpspeed = jumpspeed_normal;
 key_down = 0;
 last_wall =0;
+damage = 20;
 fric = 0.25; // from 0 to 1
 
 //Combat
+hurt = 0;
 globalvar attack;
 attack = true;
 sword = false;
@@ -112,7 +119,7 @@ image_speed = 0;
 if (backtrack == true ) 
 {
     x = obj_door_next.x - 32;
-    y = obj_door_next.y;
+    y = obj_door_next.y + obj_door_next.sprite_height - obj_player.sprite_height ;
     backtrack = false;
 }
 </string>
@@ -156,6 +163,29 @@ if (backtrack == true )
           <argument>
             <kind>0</kind>
             <string></string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>hurt = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -241,7 +271,7 @@ sprite_index = spr_player;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Player Code
+            <string>///Player Movement
 // Check for input
 key_right = keyboard_check ( vk_right );
 key_left = -keyboard_check ( vk_left );
@@ -294,7 +324,7 @@ else if (hsp &gt; 0){
 if ((vsp &lt; 0 ) &amp;&amp; ( !key_jump_held )) vsp = max ( vsp , 0 );
 hsp += hsp_carry;
 hsp_carry = 0;
-        
+
 //Horizontal Collision
 if(place_meeting( x + hsp, y, obj_wall ) )
 {
@@ -316,6 +346,81 @@ if(place_meeting ( x, y + vsp, obj_wall ) )
     vsp = 0;
 }
 y += vsp;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Attack
+if ((attack == true) &amp;&amp; (keyboard_check_pressed(ord("X"))))
+{
+    attack = false;
+    instance_create(x, y, obj_attack);
+}
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Health and enemy attack
+if (place_meeting(x,y,obj_enemy) &amp;&amp; (hurt == 0)) {
+    hp -= obj_enemy.damage;
+    hurt = 1;
+    alarm[1] = 150;
+}
+if (hp&lt; 0 ) hp =0;
+//health bar
+if hurt = 1 
+{
+    image_alpha = .5
+}
+else
+{
+    image_alpha = 1;
+}
+
+//death
+if hp &lt; 1 
+{
+    instance_destroy();
+    audio_play_sound ( snd_death , 0 , false );
+    instance_create ( 0 , 0 , obj_gameOver );
+    instance_create ( 0 , 0 , obj_controller );
+}
 </string>
           </argument>
         </arguments>
@@ -361,34 +466,6 @@ y += vsp;
         </arguments>
       </action>
     </event>
-    <event eventtype="9" enumb="88">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(attack == true)
-{
-    attack = false;
-    instance_create(x, y, obj_attack);
-
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="9" enumb="39">
       <action>
         <libid>1</libid>
@@ -407,8 +484,8 @@ y += vsp;
           <argument>
             <kind>1</kind>
             <string>right = true;
-    image_index = 0;
-    image_speed = 0;
+image_index = 0;
+image_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -431,9 +508,9 @@ y += vsp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    right = false;
-    image_index = 1;
-    image_speed = 0;
+            <string>right = false;
+image_index = 1;
+image_speed = 0;
 </string>
           </argument>
         </arguments>

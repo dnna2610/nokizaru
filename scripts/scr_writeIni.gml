@@ -1,13 +1,11 @@
 fileName = "nokizaru.ini";
 if (file_exists(fileName)) file_delete(fileName);
-var file = file_text_open_write(fileName);
-if (obj_player.backtrack) values[0] = "true";
-else values[0] = "false";
-if (obj_player.walljump) values[1] = "true";
-else values[1] = "false";
-for (i=0; i<array_length_1d(values); i+=1)
-{
-    file_text_write_string(file, values[i]);
-    file_text_writeln(file);
-};
-file_text_close(file);
+ini_open(fileName);
+ini_write_real("player", "hp", obj_player.hp);
+ini_write_real("player", "max_hp", obj_player.max_hp);
+ini_write_bool("player", "walljump", obj_player.walljump);
+ini_write_bool("player", "doublejump", obj_player.doublejump);
+ini_write_bool("player", "fireball", obj_player.fireball);
+ini_write_bool("player", "hpupgrade", obj_player.hpupgrade);
+ini_write_bool("player", "backtrack", obj_player.backtrack);
+ini_close();

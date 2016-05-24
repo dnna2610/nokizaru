@@ -56,22 +56,6 @@ max_flying_speed = 5;
     image_angle = direction;
     speed = min(max_flying_speed, speed);
 } else speed = 0;
-
-// Enemy collision
-if (place_meeting(x,y,obj_player))
-{
-    with ( obj_player )
-    instance_destroy();
-    audio_play_sound ( snd_death , 0 , false );
-    instance_create ( 0 , 0 , obj_gameOver );
-    instance_create ( 0 , 0 , obj_controller );
-}
-
-//Sword collision
-if(place_meeting(x,y,obj_attack))
-{
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

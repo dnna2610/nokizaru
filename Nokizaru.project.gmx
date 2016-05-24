@@ -30,14 +30,24 @@
     <sprite>sprites\spr_player_c</sprite>
     <sprite>sprites\spr_menu_arrow</sprite>
     <sprite>sprites\spr_enemy_leaper</sprite>
+    <sprite>sprites\spr_healthpack</sprite>
+    <sprite>sprites\spr_healthbar</sprite>
+    <sprite>sprites\spr_healthbar_bg</sprite>
+    <sprite>sprites\spr_healthbar_border</sprite>
+    <sprite>sprites\spr_healthbar_inner</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\scr_loadgame.gml</script>
-    <script>scripts\scr_savegame.gml</script>
     <script>scripts\scr_writeIni.gml</script>
     <script>scripts\scr_readIni.gml</script>
+    <scripts name="general">
+      <script>scripts\ini_read_bool.gml</script>
+      <script>scripts\ini_write_bool.gml</script>
+      <script>scripts\scr_newgame.gml</script>
+      <script>scripts\scr_loadgame.gml</script>
+      <script>scripts\scr_savegame.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_large</font>
@@ -64,6 +74,7 @@
     </objects>
     <objects name="Collectibles">
       <object>objects\obj_powerup</object>
+      <object>objects\obj_healthpack</object>
     </objects>
     <objects name="Hazards">
       <object>objects\obj_enemy_grav</object>
@@ -71,6 +82,7 @@
       <object>objects\obj_spider</object>
       <object>objects\obj_flying_enemy</object>
       <object>objects\obj_leaper</object>
+      <object>objects\obj_enemy</object>
     </objects>
     <objects name="Elements">
       <object>objects\obj_controller</object>
@@ -82,6 +94,9 @@
       <object>objects\obj_bkgm</object>
       <object>objects\obj_menu</object>
       <object>objects\obj_pause</object>
+      <object>objects\obj_save</object>
+      <object>objects\obj_health_stat</object>
+      <object>objects\obj_health</object>
     </objects>
   </objects>
   <rooms name="rooms">

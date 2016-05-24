@@ -26,6 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>pause = 0;
+menu[0]="Continue";
+menu[1]="Save";
+menu[2]="Quit";
+
+mspace = 64;
+mpos = 0;
+mov = 0;
 </string>
           </argument>
         </arguments>
