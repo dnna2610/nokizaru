@@ -27,7 +27,13 @@
             <kind>1</kind>
             <string>draw_set_color(c_black);
 draw_set_font(fnt_med);
-draw_text(32, 132, string(obj_player.hp) + "/" + string(obj_player.max_hp));
+if (instance_exists(obj_player)) {
+    draw_text(250, 132, string(obj_player.hp) + "/" + string(obj_player.max_hp));
+} else {
+    ini_open("nokizaru.ini");
+    draw_text(250, 132, "0/" + string(ini_read_real("player","max_hp",100)));
+    ini_close();
+}
 </string>
           </argument>
         </arguments>
