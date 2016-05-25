@@ -153,7 +153,6 @@
     <instance objName="obj_forestground_dark" x="1992" y="1476" name="inst_4C055FA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="-18" y="978" name="inst_89697449" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_next" x="2004" y="1224" name="inst_BC46A8F1" locked="0" code="" scaleX="0.580645143985748" scaleY="6" colour="4294967295" rotation="0"/>
-    <instance objName="&lt;undefined&gt;" x="-240" y="480" name="inst_A93545FA" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="516" y="1272" name="inst_67444987" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="522" y="1350" name="inst_6EC6D0EE" locked="0" code="" scaleX="30.1299991607666" scaleY="-0.25" colour="4294967295" rotation="0"/>
     <instance objName="obj_shrine" x="-234" y="480" name="inst_1032109C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
