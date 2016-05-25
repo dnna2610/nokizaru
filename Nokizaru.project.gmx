@@ -128,6 +128,7 @@
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
       <room>rooms\rm_b1_1_2</room>
+      <room>rooms\rm_b1_1_test3</room>
     </rooms>
     <rooms name="alpha1">
       <room>rooms\rm_1_2_new</room>
