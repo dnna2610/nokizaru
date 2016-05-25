@@ -35,6 +35,18 @@
     <sprite>sprites\spr_healthbar_bg</sprite>
     <sprite>sprites\spr_healthbar_border</sprite>
     <sprite>sprites\spr_healthbar_inner</sprite>
+    <sprites name="proto">
+      <sprite>sprites\spr_proto_main</sprite>
+      <sprite>sprites\spr_proto_main_powerup</sprite>
+      <sprite>sprites\spr_proto_shrine</sprite>
+    </sprites>
+    <sprites name="environment">
+      <sprite>sprites\spr_dirtL</sprite>
+      <sprite>sprites\spr_dirtR</sprite>
+      <sprite>sprites\spr_grassEdgeL</sprite>
+      <sprite>sprites\spr_grassMid</sprite>
+      <sprite>sprites\spr_grassEdgeR</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -66,6 +78,13 @@
       <object>objects\obj_dropPlat</object>
       <object>objects\obj_movingPlat</object>
       <objects name="forestGround_grp">
+        <object>objects\obj_dirtL</object>
+        <object>objects\obj_dirtR</object>
+        <object>objects\obj_grassEdgeL</object>
+        <object>objects\obj_grassEdgeR</object>
+        <object>objects\obj_grassMid</object>
+      </objects>
+      <objects name="old_forestGround_grp">
         <object>objects\obj_forestground</object>
         <object>objects\obj_forestground_bg</object>
         <object>objects\obj_forestground_dark</object>
@@ -98,8 +117,17 @@
       <object>objects\obj_health_stat</object>
       <object>objects\obj_health</object>
     </objects>
+    <objects name="Environment">
+      <object>objects\obj_shrine</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <rooms name="beta1">
+      <room>rooms\rm_initialize</room>
+      <room>rooms\rm_b1_1_0</room>
+      <room>rooms\rm_b1_1_1</room>
+      <room>rooms\rm_b1_1_2</room>
+    </rooms>
     <rooms name="alpha1">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_1_2_new</room>
