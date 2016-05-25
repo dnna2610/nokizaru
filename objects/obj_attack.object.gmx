@@ -83,7 +83,8 @@ if obj_player.right = false
           <argument>
             <kind>1</kind>
             <string>if (place_meeting(x,y, obj_enemy)){
-    obj_enemy.hp -= obj_player.damage;
+    var inst = instance_position(x, y, obj_enemy);
+    if (instance_exists(inst)) inst.hp -= obj_player.damage;
 }
 </string>
           </argument>
