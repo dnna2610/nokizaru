@@ -53,6 +53,9 @@ room_goto_next();</code>
   </views>
   <instances>
     <instance objName="obj_bkgm" x="64" y="288" name="inst_8C256A2F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_pause" x="160" y="288" name="inst_657DBF69" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_health_stat" x="192" y="288" name="inst_442D6955" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_health" x="256" y="288" name="inst_DAFE9D03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

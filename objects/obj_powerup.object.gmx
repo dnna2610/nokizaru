@@ -29,7 +29,7 @@
 {
     jumpspeed = jumpspeed_powerup;
     walljump = true;
-    sprite_index = spr_player_b;
+    sprite_index = spr_proto_main_powerup;
 }
 
 instance_destroy();
