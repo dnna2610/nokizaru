@@ -47,6 +47,8 @@
       <sprite>sprites\spr_grassMid</sprite>
       <sprite>sprites\spr_grassEdgeR</sprite>
     </sprites>
+    <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_webbullet</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -102,6 +104,8 @@
       <object>objects\obj_flying_enemy</object>
       <object>objects\obj_leaper</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_boss</object>
+      <object>objects\obj_webbullet</object>
     </objects>
     <objects name="Elements">
       <object>objects\obj_controller</object>
@@ -124,7 +128,7 @@
   <rooms name="rooms">
     <rooms name="beta1">
       <room>rooms\rm_menu</room>
-      <room>rooms\rm_initialize</room>
+      <room>rooms\rm_boss_test</room>
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
       <room>rooms\rm_b1_1_2</room>
