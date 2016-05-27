@@ -39,6 +39,7 @@
       <sprite>sprites\spr_proto_main</sprite>
       <sprite>sprites\spr_proto_main_powerup</sprite>
       <sprite>sprites\spr_proto_shrine</sprite>
+      <sprite>sprites\spr_webDoor</sprite>
     </sprites>
     <sprites name="environment">
       <sprite>sprites\spr_dirtL</sprite>
@@ -120,11 +121,13 @@
     <objects name="Environment">
       <object>objects\obj_shrine</object>
     </objects>
+    <object>objects\obj_webDoor</object>
   </objects>
   <rooms name="rooms">
     <rooms name="beta1">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_initialize</room>
+      <room>rooms\rm_b1_1_4</room>
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
       <room>rooms\rm_b1_1_2</room>
