@@ -40,14 +40,21 @@
           <argument>
             <kind>1</kind>
             <string>enum boss_state {
+    wondering,
+    waiting,
+    acting,
     stunned,
+    idle,
+    none
+};
+enum boss_action {
     shooting,
     spawning,
-    idle,
     charging
 };
 knockback = false;
-state= boss_state.shooting;
+state= boss_state.wondering;
+act = boss_action.shooting;
 dir = point_direction(0,0,-5,-5);
 motion_add(dir,5);
 </string>
@@ -55,7 +62,7 @@ motion_add(dir,5);
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="2">
+    <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,13 +79,8 @@ motion_add(dir,5);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Charging State
-if (instance_exists(obj_player)) {
-    speed = 0;
-    dir = point_direction(x,y,obj_player.x, obj_player.y);
-    motion_add(dir, 20);
-    state = boss_state.shooting;
-}
+            <string>/// Stunned
+state = boss_state.wondering;
 </string>
           </argument>
         </arguments>
@@ -101,16 +103,8 @@ if (instance_exists(obj_player)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Spwaning State
-if (instance_exists(obj_player)) {
-    instance_create(x+ sprite_width,y + sprite_height,obj_enemy_pace);
-    var inst = instance_position(x,y, obj_enemy_pace);
-    with(inst) {
-        dir = point_direction(x,y, obj_player.x, obj_player.y);
-        motion_add(dir, 7);
-    }
-    state = boss_state.charging;
-}
+            <string>/// Waiting
+state = boss_state.acting;
 </string>
           </argument>
         </arguments>
@@ -133,16 +127,8 @@ if (instance_exists(obj_player)) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Shooting State
-if (instance_exists(obj_player)) {
-    instance_create(x,y,obj_webbullet);
-    var inst = instance_position(x,y, obj_webbullet);
-    with(inst) {
-        dir = point_direction(x,y, obj_player.x, obj_player.y);
-        motion_add(dir, 7);
-    }
-    state = boss_state.spawning;
-}
+            <string>/// Wondering
+state = boss_state.waiting;
 </string>
           </argument>
         </arguments>
@@ -182,26 +168,73 @@ if (instance_exists(obj_player)) {
             <string>///Move
 switch (state)
 {
-    case boss_state.shooting:
-        alarm[0] = room_speed *3;
+    case boss_state.wondering:
+        alarm[0] = room_speed *3; // Flying time
         state = boss_state.idle;
         break;
-    case boss_state.spawning:
-        alarm[1] = room_speed *3;
-        state = boss_state.idle;
+    case boss_state.waiting: 
+        speed = 0;
+        alarm[1] = room_speed/2; // Change this to change wait time before action
+        state = boss_state.none;
         break;
-    case boss_state.charging:
-        alarm[2] = room_speed *3;
-        state = boss_state.idle;
-    case boss_state.idle:
+    case boss_state.acting:
+        /// Acting
+        switch(act) {
+            case boss_action.shooting:
+                if (instance_exists(obj_player)) {
+                    instance_create(x,y,obj_webbullet);
+                    var inst = instance_position(x,y, obj_webbullet);
+                    with(inst) {
+                        dir = point_direction(x,y, obj_player.x, obj_player.y);
+                        motion_add(dir, 7);
+                    }
+                }
+                act = boss_action.spawning;
+                state = boss_state.wondering;
+                break;
+            case boss_action.spawning:
+                if (instance_exists(obj_player)) {
+                    instance_create(x+ sprite_width,y + sprite_height,obj_enemy_pace);
+                    var inst = instance_position(x,y, obj_enemy_pace);
+                    with(inst) {
+                        dir = point_direction(x,y, obj_player.x, obj_player.y);
+                        motion_add(dir, 7);
+                    }
+                }
+                act = boss_action.charging;
+                state = boss_state.wondering;
+                break;
+            case boss_action.charging:
+                if (instance_exists(obj_player) &amp;&amp; (speed == 0)) {
+                    dir = point_direction(x,y,obj_player.x, obj_player.y);
+                    motion_add(dir, 20);
+                }
+                if (place_meeting(x,y, obj_wall)) {
+                    speed = 0;
+                    act = boss_action.shooting;
+                    state = boss_state.stunned;
+                    instance_create(x,y, obj_shake_effect);
+                }
+                break;
+        }
+        break;
+    case boss_state.stunned:
+        alarm[3] = room_speed * 1.5;
+        state = boss_state.none;
+        break;
+    case boss_state.idle: 
+        var inst = instance_nearest(x, y, obj_wall);
+        dir = 180 + point_direction(x,y,inst.x, inst.y);
+        if ((distance_to_object(obj_wall) &lt; 50) || (speed == 0)) motion_add(dir,5);
+        if (place_meeting(x,y+150, obj_wall)) {
+            dir = point_direction(0,0, 0,-5);
+            motion_add(dir, 5);
+        }
+        if (speed &gt; 6) speed =6;
+        break;
+    case boss_state.none:
         break;
 }
-if (distance_to_object(obj_wall) &lt; 50) {
-    var inst = instance_nearest(x, y, obj_wall);
-    dir = 180 + point_direction(x,y,inst.x, inst.y);
-    motion_add(dir,5);
-}
-if (speed &gt; 6) speed =6;
 </string>
           </argument>
         </arguments>
