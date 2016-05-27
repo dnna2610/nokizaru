@@ -93,6 +93,9 @@
         <object>objects\obj_forestground_dark</object>
         <object>objects\obj_forestground_solid</object>
       </objects>
+      <objects name="proto">
+        <object>objects\obj_fallRoof</object>
+      </objects>
     </objects>
     <objects name="Collectibles">
       <object>objects\obj_powerup</object>
@@ -129,10 +132,13 @@
     <object>objects\obj_webDoor</object>
   </objects>
   <rooms name="rooms">
-    <rooms name="beta1">
+    <rooms name="final1">
       <room>rooms\rm_menu</room>
-      <room>rooms\rm_boss_test</room>
       <room>rooms\rm_initialize</room>
+      <room>rooms\rm_f1_1_4</room>
+    </rooms>
+    <rooms name="beta1">
+      <room>rooms\rm_boss_test</room>
       <room>rooms\rm_b1_1_4</room>
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
