@@ -130,12 +130,9 @@
   <rooms name="rooms">
     <rooms name="beta1">
       <room>rooms\rm_menu</room>
-<<<<<<< HEAD
       <room>rooms\rm_boss_test</room>
-=======
       <room>rooms\rm_initialize</room>
       <room>rooms\rm_b1_1_4</room>
->>>>>>> parent of 71706b0... Revert "Small updates for current levels"
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
       <room>rooms\rm_b1_1_2</room>
