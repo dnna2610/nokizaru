@@ -121,6 +121,7 @@
       <object>objects\obj_save</object>
       <object>objects\obj_health_stat</object>
       <object>objects\obj_health</object>
+      <object>objects\obj_shake_effect</object>
     </objects>
     <objects name="Environment">
       <object>objects\obj_shrine</object>
