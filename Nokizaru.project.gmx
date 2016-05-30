@@ -47,6 +47,8 @@
       <sprite>sprites\spr_grassEdgeL</sprite>
       <sprite>sprites\spr_grassMid</sprite>
       <sprite>sprites\spr_grassEdgeR</sprite>
+      <sprite>sprites\spr_treeL</sprite>
+      <sprite>sprites\spr_treeR</sprite>
     </sprites>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_webbullet</sprite>
@@ -144,7 +146,6 @@
       <room>rooms\rm_f1_1_0</room>
       <room>rooms\rm_f1_1_1</room>
       <room>rooms\rm_f1_1_2</room>
-      <room>rooms\rm_f1_1_3</room>
       <room>rooms\rm_f1_1_4</room>
     </rooms>
     <rooms name="beta1">
@@ -175,6 +176,7 @@
       <room>rooms\rm_youWin</room>
       <room>rooms\ini</room>
     </rooms>
+    <room>rooms\rm_f1_1_3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
