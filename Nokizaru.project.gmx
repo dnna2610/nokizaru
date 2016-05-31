@@ -8,6 +8,7 @@
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_death</sound>
     <sound>sound\snd_bkg1</sound>
+    <sound>sound\snd_collide_boss</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
