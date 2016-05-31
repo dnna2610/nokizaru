@@ -236,14 +236,28 @@ switch (state)
         alarm[3] = room_speed * 1.5;
         state = boss_state.none;
         break;
-    case boss_state.idle: 
+    case boss_state.idle:
+        vertical_wall = place_meeting(x, y-100, obj_wall) || place_meeting(x, y+250, obj_wall);
+        horizontal_wall = place_meeting(x+100, y, obj_wall) || place_meeting(x-100, y, obj_wall);
         var inst = instance_nearest(x, y, obj_wall);
-        dir = 180 + point_direction(x,y,inst.x, inst.y);
+        dir = point_direction(x,y,inst.x, inst.y);
+        if (speed == 0) {
+            motion_add(dir+180,5);
+        } else if (vertical_wall &amp;&amp; horizontal_wall) {
+            speed = 0;
+        } else {
+            if ((abs(direction-dir) &lt; 135) &amp;&amp; (vertical_wall || horizontal_wall)) {
+                dir = sign(direction-dir);
+                direction = direction + 4*dir;
+                if (dir == 0) direction += 10;
+            }
+        }
+        /*
         if ((distance_to_object(obj_wall) &lt; 50) || (speed == 0)) motion_add(dir,5);
         if (place_meeting(x,y+150, obj_wall)) {
             dir = point_direction(0,0, 0,-5);
             motion_add(dir, 5);
-        }
+        }*/
         if (speed &gt; 6) speed =6;
         break;
     case boss_state.none:

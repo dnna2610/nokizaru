@@ -54,6 +54,7 @@
     </sprites>
     <sprite>sprites\spr_boss</sprite>
     <sprite>sprites\spr_webbullet</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -82,6 +83,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_menu_player</object>
       <object>objects\obj_attack</object>
+      <object>objects\obj_fireball</object>
     </objects>
     <objects name="Platforming">
       <object>objects\obj_wall</object>
