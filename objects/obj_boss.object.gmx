@@ -55,6 +55,8 @@ enum boss_action {
 knockback = false;
 state= boss_state.wondering;
 act = boss_action.shooting;
+charge_lower = false;
+charged = false;
 dir = point_direction(0,0,-5,-5);
 motion_add(dir,5);
 </string>
@@ -105,6 +107,8 @@ state = boss_state.wondering;
             <kind>1</kind>
             <string>/// Waiting
 state = boss_state.acting;
+charge_lower = false;
+charged = false;
 </string>
           </argument>
         </arguments>
@@ -186,7 +190,7 @@ switch (state)
                     var inst = instance_position(x,y, obj_webbullet);
                     with(inst) {
                         dir = point_direction(x,y, obj_player.x, obj_player.y);
-                        motion_add(dir, 7);
+                        motion_add(dir, 15);
                     }
                 }
                 act = boss_action.spawning;
@@ -205,15 +209,25 @@ switch (state)
                 state = boss_state.wondering;
                 break;
             case boss_action.charging:
-                if (instance_exists(obj_player) &amp;&amp; (speed == 0)) {
-                    dir = point_direction(x,y,obj_player.x, obj_player.y);
-                    motion_add(dir, 20);
+                if (instance_exists(obj_player)) {
+                    v_dist = abs(y - obj_player.y);
+                    if (not charge_lower) {
+                        dir = point_direction(0,0,0,5);
+                        motion_add(dir, 5);
+                        charge_lower = true;
+                    } else if ((v_dist &lt; 100) &amp;&amp; (not charged)) {
+                        speed = 0;
+                        dir = point_direction(x,y,obj_player.x, obj_player.y);
+                        motion_add(dir, 20);
+                        charged = true;
+                    }
                 }
                 if (place_meeting(x,y, obj_wall)) {
                     speed = 0;
                     act = boss_action.shooting;
                     state = boss_state.stunned;
                     instance_create(x,y, obj_shake_effect);
+                    audio_play_sound(snd_collide_boss,0, false);
                 }
                 break;
         }
