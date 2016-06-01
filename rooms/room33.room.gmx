@@ -54,7 +54,7 @@
     <instance objName="obj_health_stat" x="-168" y="420" name="inst_F5048752" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health" x="-108" y="420" name="inst_5C7A7A41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="666" y="1446" name="inst_94571415" locked="0" code="" scaleX="38.9375" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="24" y="264" name="inst_2CDEA3E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="24" y="708" name="inst_2CDEA3E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="684" y="355" name="inst_11E47499" locked="0" code="" scaleX="43.2258071899414" scaleY="1.1875" colour="4294967295" rotation="0"/>
     <instance objName="obj_treeR" x="1326" y="516" name="inst_0B262EAB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_treeR" x="1326" y="564" name="inst_05B18E92" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -116,7 +116,7 @@
     <instance objName="obj_treeL" x="24" y="1692" name="inst_4DE1D210" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_treeL" x="24" y="570" name="inst_3C9E3E97" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_treeL" x="24" y="810" name="inst_54A39B6D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door_previous" x="-36" y="150" name="inst_AC8EAD87" locked="0" code="" scaleX="0.9375" scaleY="5.44000005722046" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_previous" x="-36" y="606" name="inst_AC8EAD87" locked="0" code="" scaleX="0.9375" scaleY="5.44000005722046" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_next" x="1362" y="174" name="inst_CA1116CA" locked="0" code="" scaleX="0.75" scaleY="4.875" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
