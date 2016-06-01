@@ -90,11 +90,8 @@
       <object>objects\obj_player</object>
       <object>objects\obj_menu_player</object>
       <object>objects\obj_attack</object>
-<<<<<<< HEAD
       <object>objects\obj_hitbox</object>
-=======
       <object>objects\obj_fireball</object>
->>>>>>> origin/master
     </objects>
     <objects name="Platforming">
       <object>objects\obj_wall</object>
