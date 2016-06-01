@@ -64,6 +64,10 @@ if obj_player.right = false
     sprite_index = spr_attack_left;
 }
 }
+else
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
