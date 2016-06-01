@@ -23,6 +23,7 @@
     <sprite>sprites\spr_spider</sprite>
     <sprite>sprites\spr_flying_enemy</sprite>
     <sprite>sprites\spr_attack_left</sprite>
+    <sprite>sprites\spr_hitbox</sprite>
     <sprite>sprites\spr_attack_right</sprite>
     <sprite>sprites\spr_forestground</sprite>
     <sprite>sprites\spr_forestground_bg</sprite>
@@ -72,6 +73,7 @@
     <objects name="player_states">
       <object>objects\obj_player</object>
       <object>objects\obj_attack</object>
+      <object>objects\obj_hitbox</object>
     </objects>
     <objects name="Platforming">
       <object>objects\obj_wall</object>
