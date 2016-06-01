@@ -50,7 +50,8 @@ image_speed = 0.5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if obj_player.right = true
+            <string>if (instance_exists(obj_player)){
+if obj_player.right = true
 {
     x = obj_player.x + (40);
     y = obj_player.y;
@@ -61,6 +62,11 @@ if obj_player.right = false
     x = obj_player.x - (40);
     y = obj_player.y;
     sprite_index = spr_attack_left;
+}
+}
+else
+{
+    instance_destroy();
 }
 </string>
           </argument>

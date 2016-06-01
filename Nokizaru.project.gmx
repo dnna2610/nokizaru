@@ -8,6 +8,13 @@
     <sound>sound\snd_jump</sound>
     <sound>sound\snd_death</sound>
     <sound>sound\snd_bkg1</sound>
+    <sound>sound\snd_collide_boss</sound>
+    <sound>sound\snd_enemy_grav_death</sound>
+    <sound>sound\snd_fireball_cast</sound>
+    <sound>sound\snd_leaper_death</sound>
+    <sound>sound\snd_sword_hit</sound>
+    <sound>sound\snd_wisp_death</sound>
+    <sound>sound\snd_armor_pickup</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_wall</sprite>
@@ -40,6 +47,8 @@
       <sprite>sprites\spr_proto_main</sprite>
       <sprite>sprites\spr_proto_main_powerup</sprite>
       <sprite>sprites\spr_proto_shrine</sprite>
+      <sprite>sprites\spr_webDoor</sprite>
+      <sprite>sprites\spr_treeLeaves_test</sprite>
     </sprites>
     <sprites name="environment">
       <sprite>sprites\spr_dirtL</sprite>
@@ -47,10 +56,17 @@
       <sprite>sprites\spr_grassEdgeL</sprite>
       <sprite>sprites\spr_grassMid</sprite>
       <sprite>sprites\spr_grassEdgeR</sprite>
+      <sprite>sprites\spr_treeL</sprite>
+      <sprite>sprites\spr_treeR</sprite>
     </sprites>
+    <sprite>sprites\spr_boss</sprite>
+    <sprite>sprites\spr_webbullet</sprite>
+    <sprite>sprites\spr_fireball</sprite>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_menu</path>
+  </paths>
   <scripts name="scripts">
     <script>scripts\scr_writeIni.gml</script>
     <script>scripts\scr_readIni.gml</script>
@@ -72,8 +88,13 @@
   <objects name="objects">
     <objects name="player_states">
       <object>objects\obj_player</object>
+      <object>objects\obj_menu_player</object>
       <object>objects\obj_attack</object>
+<<<<<<< HEAD
       <object>objects\obj_hitbox</object>
+=======
+      <object>objects\obj_fireball</object>
+>>>>>>> origin/master
     </objects>
     <objects name="Platforming">
       <object>objects\obj_wall</object>
@@ -92,6 +113,13 @@
         <object>objects\obj_forestground_dark</object>
         <object>objects\obj_forestground_solid</object>
       </objects>
+      <objects name="proto">
+        <object>objects\obj_fallRoof</object>
+      </objects>
+      <objects name="wood_grp">
+        <object>objects\obj_treeL</object>
+        <object>objects\obj_treeR</object>
+      </objects>
     </objects>
     <objects name="Collectibles">
       <object>objects\obj_powerup</object>
@@ -104,6 +132,8 @@
       <object>objects\obj_flying_enemy</object>
       <object>objects\obj_leaper</object>
       <object>objects\obj_enemy</object>
+      <object>objects\obj_boss</object>
+      <object>objects\obj_webbullet</object>
     </objects>
     <objects name="Elements">
       <object>objects\obj_controller</object>
@@ -118,18 +148,37 @@
       <object>objects\obj_save</object>
       <object>objects\obj_health_stat</object>
       <object>objects\obj_health</object>
+      <object>objects\obj_shake_effect</object>
     </objects>
     <objects name="Environment">
       <object>objects\obj_shrine</object>
     </objects>
+    <object>objects\obj_webDoor</object>
+    <object>objects\obj_treeLeaves_test</object>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tml_menu</timeline>
+  </timelines>
   <rooms name="rooms">
-    <rooms name="beta1">
+    <rooms name="final1">
       <room>rooms\rm_menu</room>
       <room>rooms\rm_initialize</room>
+      <room>rooms\rm_f1_1_0</room>
+      <room>rooms\rm_f1_1_1</room>
+      <room>rooms\rm_f1_1_2</room>
+      <room>rooms\rm_f1_1_3</room>
+      <room>rooms\rm_f1_1_4</room>
+      <room>rooms\room33</room>
+      <room>rooms\rm_f1_1_51</room>
+      <room>rooms\rm_f1_1_5</room>
+    </rooms>
+    <rooms name="beta1">
+      <room>rooms\rm_boss_test</room>
+      <room>rooms\rm_b1_1_4</room>
       <room>rooms\rm_b1_1_0</room>
       <room>rooms\rm_b1_1_1</room>
       <room>rooms\rm_b1_1_2</room>
+      <room>rooms\rm_b1_1_test3</room>
     </rooms>
     <rooms name="alpha1">
       <room>rooms\rm_1_2_new</room>
@@ -151,6 +200,8 @@
       <room>rooms\rm_youWin</room>
       <room>rooms\ini</room>
     </rooms>
+    <room>rooms\rm_f1_1_3_old</room>
+    <room>rooms\rm_f1_1_4_old</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

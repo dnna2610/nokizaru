@@ -86,15 +86,13 @@
     <instance objName="obj_wall" x="2184" y="1752" name="inst_749A70E1" locked="0" code="" scaleX="5.71999979019165" scaleY="0.548387110233307" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="-60" y="1050" name="inst_4A5549EC" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_previous" x="-36" y="1284" name="inst_57440626" locked="0" code="" scaleX="0.9375" scaleY="17.8099994659424" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="4074" y="924" name="inst_E7C57D56" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
-    <instance objName="obj_door_next" x="4002" y="-120" name="inst_1361AFB9" locked="0" code="" scaleX="0.75" scaleY="21.75" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="3978" y="552" name="inst_3A401D93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="3978" y="510" name="inst_A554F322" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall" x="3978" y="468" name="inst_B0E438EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall" x="4050" y="930" name="inst_E7C57D56" locked="0" code="" scaleX="1" scaleY="70" colour="4294967295" rotation="0"/>
     <instance objName="obj_health_stat" x="168" y="348" name="inst_5141E6A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health" x="192" y="348" name="inst_41969D74" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_healthpack" x="3792" y="1218" name="inst_726E86DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_healthpack" x="3276" y="1812" name="inst_2AFFEB37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flying_enemy" x="3738" y="204" name="inst_FD5C5838" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_next" x="4002" y="348" name="inst_DC019B70" locked="0" code="" scaleX="0.75" scaleY="6.9375" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

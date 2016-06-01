@@ -155,9 +155,10 @@
     <instance objName="obj_door_next" x="2004" y="1224" name="inst_BC46A8F1" locked="0" code="" scaleX="0.580645143985748" scaleY="6" colour="4294967295" rotation="0"/>
     <instance objName="obj_player" x="516" y="1272" name="inst_67444987" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="522" y="1350" name="inst_6EC6D0EE" locked="0" code="" scaleX="30.1299991607666" scaleY="-0.25" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shrine" x="-234" y="480" name="inst_1032109C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shrine" x="-234" y="480" name="inst_1032109C" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health_stat" x="132" y="348" name="inst_D1238298" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_health" x="168" y="348" name="inst_72A59A4B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_leaper" x="966" y="1302" name="inst_2F212A0C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
